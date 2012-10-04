@@ -1,1 +1,23 @@
-hello libfuzz
+Goals:
+ - small embeddable library for quick and dirty fuzzing
+ - intended to be used by developers for randomized (but repeatable) tests
+   in build environment and continuous testing
+ - have a command line reference tool
+ - steal stuff from radamsa
+ - have a FFI wrapper for at least Python
+
+Likely required:
+ - set random seed (optional, initially random)
+ - get initial random state
+ - change a chunk of memory
+   - result must be free():d?
+ - change an area of memory
+   - no length change, only alter data
+   - no freeing issues
+
+Likely useful:
+ - provide own open() and read() to be useful via via LD_LIBRARY_PATH 
+    + use an environment variable to choose what to modify? 
+ - own read() also useful to get deterministic block sizes
+
+
