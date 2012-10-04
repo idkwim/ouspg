@@ -1,0 +1,34 @@
+blocks - A hack to add Ruby-ish blocks to Python 2.x (x >= 5)
+
+This module uses a triplet of hacks to create a special context
+manager class which can be used together with Python's with-statements
+to emulate Ruby-style blocks. The captured blocks operate in the
+with-statement's local context.
+
+The module can be used for stuff, but probably shouldn't. The code has
+been rumoured to work, somewhat, with at least CPython 2.5.4 and
+2.6.2. However, there are too many caveats to mention. Don't expect
+anything.
+
+There is a non-standard-library dependency, the byteplay module, which
+is available at http://code.google.com/p/byteplay/
+
+A small example follows:
+
+>>> from __future__ import with_statement
+>>> from blocks import takes_block
+>>>
+>>> @takes_block
+... def each(iterator, block):
+... 	for i in iterator:
+... 	    block(i)
+... 
+>>> with each([1, 2, 3]) as x:
+...     print x
+... 
+1
+2
+3
+
+For more prose about the subject, please refer to 
+http://code.google.com/p/ouspg/wiki/AnonymousBlocksInPython
