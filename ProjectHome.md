@@ -1,0 +1,3 @@
+This is a public playground and a brain dump facility for the members and alumni of the [Oulu University Secure Programming Group](http://www.ee.oulu.fi/research/ouspg) (OUSPG). It is contains some tools and notes which we believe might be of use also for others.
+
+The currently most active content is related to robustness testing. [Radamsa](Radamsa.md) is a test case generator for robustness testing (aka a fuzzer), and [Blab](Blab.md) is a grammar-based data generator. There is also a plagiarism detector, which we usually run on programming assignments, and some notes on various subjects in the Wiki.
